@@ -1,0 +1,38 @@
+<template name="products">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <p class="lead">Catgory</p>
+        <div class="list-group">
+          <a href="#" class="list-group-item all">All</a>
+          <a href="#" class="list-group-item one">One</a>
+          <a href="#" class="list-group-item two">Two</a>
+          <a href="#" class="list-group-item three">Three</a>
+        </div>
+      </div>
+
+      
+       <div class="container">
+
+        <div class="row">
+
+
+          <div class="col-md-9">
+
+            
+            
+              {{#each allProducts}}
+              {{>product}}
+              {{/each}}                   
+            
+          
+          </div>
+
+        </div>
+
+      </div> 
+    
+  </div>
+  </div>
+</template>

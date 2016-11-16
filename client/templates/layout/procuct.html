@@ -1,0 +1,50 @@
+<template name="product">
+  <div class="col-sm-3 col-lg-3 col-md-3">
+    <div class="card card-block card-outline-primary">
+     <img class="card-img-top img-responsive" src="{{imageUrl}}" alt="{{name}}"> 
+
+
+     <h4 class="card-title">{{name}}</h4>
+
+
+     <p class="card-text">{{description}}</p>
+
+     
+
+     {{#if isAdmin}}
+    <p> <button type="button" class="btn btn-danger delete btn-block">Delete</button></p>
+      {{else}}
+
+       
+       <h5>Cost Rs. {{cost}}</h5>
+
+       <p><label class="radio-inline"><input type="radio" name="{{_id}}_once" id="once" {{stateOnce}}>Once</label>
+        <label class="radio-inline"><input type="radio" name="{{_id}}_weekly" id="weekly" {{stateWeekly}}>For a week</label></p>
+        {{#if isInCart}}
+     <div class="input-group">
+       <span class="input-group-btn">
+        <button type="button" class="btn btn-danger btn-number subtract"  data-type="minus" data-field="quant[2]">
+          <span class="glyphicon glyphicon-minus"></span>
+        </button>
+      </span>
+      <div type="text" name="quant[2]" class="form-control input-number">{{count}}</div>
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-success btn-number add" data-type="plus" data-field="quant[2]">
+          <span class="glyphicon glyphicon-plus"></span>
+        </button>
+      </span>
+    </div>
+
+    <p> <button type="button" class="btn btn-danger remove pull-right btn-block">Remove</button></p>
+     {{else}}
+    <p> <button type="button" class="btn btn-primary addToCart pull-left btn-block">Add To Cart</button></p>
+      {{/if}}
+
+
+    {{/if}}
+
+  </div>
+
+
+</div>
+</template>

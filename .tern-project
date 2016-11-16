@@ -1,0 +1,58 @@
+{
+  "ecmaVersion": 6,
+  "plugins": {
+    "guess-types": {
+      
+    },
+    "node": {
+      
+    },
+    "jasmine": {
+      
+    },
+    "meteor": {
+      
+    },
+    "browser-extension": {
+      
+    },
+    "angular1": {
+      
+    },
+    "cordovajs": {
+      
+    },
+    "node-express": {
+      
+    },
+    "gmaps3.ref": {
+      
+    },
+    "grunt": {
+      
+    },
+    "gulp": {
+      
+    },
+    "node-extension": {
+      
+    },
+    "node-mongodb-native": {
+      
+    },
+    "node-mongoose": {
+      
+    },
+    "protractor": {
+      
+    },
+    "bootstrap": {
+      
+    }
+  },
+  "libs": [
+    "ecma5",
+    "browser",
+    "jquery"
+  ]
+}

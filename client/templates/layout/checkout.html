@@ -1,0 +1,57 @@
+<template name="checkout">
+	<div class="container">
+		<div class="col-md-9">
+		{{#if isCartEmpty}}
+			{{#if showSuccessmsg}}
+			<h3>Your Order has beed placed successfully! Visit us again soon!</h3>
+			{{else}}
+			<h3>Looks like your <i class="fa fa-shopping-cart fa-1x"></i> is empty!  Please buy some thing!</h3>
+			{{/if}}
+		{{else}}
+			{{#if isLogedIn}}
+			<h3>Iteams in your Cart:</h3>
+
+			{{#each cartIteams}}
+			<ul  class="list-group">
+			{{>Iteam}}
+			</ul>
+			{{/each}}
+
+			
+			<h4>Total cost: Rs {{totalCost}}</h4>
+			<h4><a class="btn btn-primary btn-lg checkout" role="button">Checkout!</a></h4>
+
+			{{else}}
+			<h3>Your are not logged in. Please <a href="{{pathFor route='login'}}">log in</a> or <a href="{{pathFor route='register'}}">register</a> to complete your order.</h3>
+			{{/if}}
+
+		{{/if}}
+		</div>
+	</div>
+</template>
+
+
+
+<template name="Iteam">
+<li class="list-group-item inline">
+	<h3>{{productName}}</h3>
+	
+	<div class="input-group col-sm-3 col-lg-3 col-md-3 ">
+       <span class="input-group-btn">
+        <button type="button" class="btn btn-danger btn-number subtract"  data-type="minus" data-field="quant[2]">
+          <span class="glyphicon glyphicon-minus"></span>
+        </button>
+      </span>
+      <div type="text" name="quant[2]" class="form-control input-number">{{count}}</div>
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-success btn-number add" data-type="plus" data-field="quant[2]">
+          <span class="glyphicon glyphicon-plus"></span>
+        </button>
+      </span>
+    </div>
+
+    <p> <button type="button" class="btn btn-danger remove ">Remove</button></p>
+	<h4>Rs {{cost}}</h4>
+	
+</li>
+</template>
